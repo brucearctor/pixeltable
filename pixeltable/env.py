@@ -566,7 +566,7 @@ class Env:
         filename = get_model_filename(spacy_model, spacy_model_version, sdist=False)
         url = f'{spacy.about.__download_url__}/{filename}'
         # Try to `pip install` the model. We set check=False; if the pip command fails, it's not necessarily
-        # a problem, because the model have been installed on a previous attempt.
+        # a problem, because the model has been installed on a previous attempt.
         self._logger.info(f'Ensuring spaCy model is installed: {filename}')
         ret = subprocess.run([sys.executable, '-m', 'pip', 'install', '-qU', url], check=False)
         if ret.returncode != 0:
